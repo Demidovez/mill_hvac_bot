@@ -1,0 +1,10 @@
+version: "3.3"
+services:
+  mill_hvac_bot:
+    build: .
+    restart: unless-stopped
+    image: mill_hvac_bot
+    container_name: mill_hvac_bot_co
+    volumes:
+      - "/etc/timezone:/etc/timezone:ro"
+      - "/etc/localtime:/etc/localtime:ro"
