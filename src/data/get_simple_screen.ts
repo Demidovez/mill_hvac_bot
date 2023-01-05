@@ -13,8 +13,8 @@ export const getSimpleScreen = async (screen: IScreen): Promise<string> => {
       const page = await browser.newPage();
 
       await page.authenticate({
-        username: "operuser",
-        password: "Qwerty12",
+        username: process.env.USERNAME!,
+        password: process.env.PASSWORD!,
       });
 
       await page.goto(`${process.env.ESERVER_BASE_PAGE}${screen.link}`, {
